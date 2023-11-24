@@ -15,8 +15,8 @@ body {
 
     grid-template-areas:    "H H H H"
                             "N N N N" 
-                            "A M M M"
-                            "A M M M"
+                            "M M M A"
+                            "M M M A"
                             "F F F F";  
 }
 
