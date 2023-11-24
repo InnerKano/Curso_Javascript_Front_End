@@ -1,0 +1,65 @@
+* {
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+}
+
+p {
+    font-size: 25pt;
+    color: rgb(17, 212, 115);
+}
+
+/*SELECTOR DE ATRIBUTO*/
+
+/*Todos los <href>*/
+[href] {
+    border-style: double;
+}
+
+/*SELECTOR DE ATRIBUTO CON VALOR ESPECÍFICO*/
+
+/*Todos los <href> que tiene valor "#"*/
+[href='#'] {
+    border-style: groove;
+}
+
+.C1 {
+    background-color: rgb(171, 198, 248);
+}
+
+#P3 {
+    color: red;
+}
+
+#P4 {
+    color: rgb(70, 88, 252);
+}
+
+p a {
+    font-size: 11pt;
+    color: orchid;
+}
+
+h2, h5 {
+    color: crimson;
+}
+
+ul > li {
+    background-color: aquamarine;
+}
+
+/*SELECTOR DE HERMANO ADYACENTE*/
+
+/*Las <details> hermanos (mismo nivel, mismo padre) que están inmediatamente después  de <ol>*/
+ol + details {
+    border-style: solid;
+}
+
+/*SELECTOR DE HERMANO GENERAL*/
+
+/*Las <footer> hermanos (mismo nivel, mismo padre) de <nav>*/
+nav ~ footer {
+    background-color: lawngreen;
+}
+
+nav > [href]{
+    color: rgb(243, 84, 21);
+}

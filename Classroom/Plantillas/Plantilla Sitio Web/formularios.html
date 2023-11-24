@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head><!--pio-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <title>MI SITIO - FORMULARIOS</title>
+        <link href="Images\Favicon\favicon.ico" rel="icon" type="image/x-icon" sizes="32x32">
+        <link href="Images\Favicon\favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
+    </head>
+
+    <body>
+        
+        <header id="Encabezado" style="border-style: groove; text-align: center;">
+            <h1>FORMULARIOS</h1>
+        </header>
+        
+        <nav id="Menú_principal" style="border-style: groove; text-align: center;">
+            <a href="index.html">INICIO</a>
+            <a href="tablas.html">TABLAS</a>
+            <a href="#">FORMULARIOS</a>
+            <a href="estilos.html">ESTILOS</a>      
+        </nav>
+        
+        <main id="Bloque_principal" style="border-style: solid;">
+            
+            <section id="Sección_1" style="border-style: groove;">
+                <h2>ESTA ES LA SECCIÓN 1 (Bloque para el contenido principal)</h2>
+
+                <form id="Formulario1" method="POST" action="#" target="_blank" enctype="application/x-www-form-urlencoded" autocomplete="on"> <!-- method="GET" -->
+                    
+                    <label for="busqueda">Buscar Usuario </label>
+                    <input id="busqueda" type="search">
+                    <br><br>
+
+                    <label for="nombre1">Primer Nombre * </label>
+                    <input id="nombre1" type="text" required>
+                    <br><br>
+
+                    <label>Segundo Nombre </label>
+                    <input id="nombre2" type="text" autofocus>
+                    <br><br>
+                    
+                    <label for="apellido">Apellido </label>
+                    <input id="apellido" type="text" minlength="5" maxlength="30">
+                    <br><br>
+                    
+                    <label for="apodo">Nickname </label>
+                    <input id="apodo" type="text" value="ivonnecastao" disabled>
+                    <br><br>
+
+                    <label for="apodo2">Nickname 2</label>
+                    <input id="apodo2" type="text" hidden>
+                    <br><br>
+
+                    <label for="apodo3">Nickname 3</label>
+                    <input id="apodo3" type="text" value="Esto es sólo para leer" readonly>
+                    <br><br>
+
+                    <label for="codigo_postal">Código Postal</label>
+                    <input id="codigo_postal" type="text" pattern="[0-9]{6}" title="El código postal es de 6 cifras">
+                    <br><br>
+
+                    <label for="edad">Edad </label>
+                    <input id="edad" type="number" min="18" max="100"><!--Limita el rango-->
+                    <br><br>
+
+                    <label for="experiencia">Años de Experiencia </label>
+                    <input id="experiencia" type="number" min="0" max="20" step="2"><!--Limita el rango en intervalos-->
+                    <br><br>
+
+                    <label for="correo">E-mail </label>
+                    <input id="correo" type="email" multiple>
+                    <br><br>
+
+                    <label for="tel">Teléfono </label>
+                    <input id="tel" type="tel">
+                    <br><br>
+
+                    <label for="web">Dirección Web </label>
+                    <input id="web" type="url">
+                    <br><br>
+                    
+                    <label for="pass">Contraseña </label>
+                    <input id="pass" type="password"><!--Enmascara texto-->
+                    <br><br>
+                    
+                    <label for="fecha">Fecha Nacimiento </label><br>
+                    <input id="fecha" type="date" value="2021-08-24">
+                    <br><br>
+                    
+                    <label for="fecha_hora">Fecha y Hora </label><br>
+                    <input id="fecha_hora" type="datetime-local" value="2021-12-31T12:59:59">
+                    <br><br>
+                    
+                    <label for="semana">Semana del año </label><br>
+                    <input id="semana" type="week" value="2021-W40">
+                    <br><br>
+                    
+                    <label for="hora">Hora de aplicación </label><br>
+                    <input id="hora" type="time" value="12:59:59">
+                    <br><br>
+                    
+                    <label for="mes">Mes del año </label><br>
+                    <input id="mes" type="month" value="2021-09">
+                    <br><br>
+
+                    <label>Seleccione la ciudad de residencia</label><br>
+                    <input id="ciudad1" type="radio" name="ciudad" value="Pereira"><!--Agrugar utilizando "name" y los valores del grupo con "value"-->
+                    <label for="ciudad1"> Pereira </label><br>
+                    <input id="ciudad2" type="radio" name="ciudad" value="Dosquebradas" checked>
+                    <label for="ciudad2"> Dosquebradas </label><br>
+                    <input id="ciudad3" type="radio" name="ciudad" value="La Virginia">
+                    <label for="ciudad3"> La Virginia </label><br>
+                    <input id="ciudad4" type="radio" name="ciudad" value="Santa Rosa">
+                    <label for="ciudad4"> Santa Rosa </label><br>
+                    <label>Seleccione el pais de residencia</label><br>
+                    <input id="pais1" type="radio" name="pais" value="Colombia">
+                    <label for="pais1"> Colombia </label>
+                    <br><br>
+                    
+                    <p>Seleccione los medios de transporte que más utiliza</p>
+                    <input id="mediot1" type="checkbox" name="transporte" value="SITM">
+                    <label for="mediot1"> SITM </label><br>
+                    <input id="mediot2" type="checkbox" name="transporte" value="Taxi">
+                    <label for="mediot2"> Taxi </label><br>
+                    <input id="mediot3" type="checkbox" name="transporte" value="Auto Propio">
+                    <label for="mediot3"> Auto Propio </label><br>
+                    <input id="mediot4" type="checkbox" name="transporte" value="Moto Propia" checked><!--Auto seleccionado por defecto "checked"-->
+                    <label for="mediot4"> Moto Propia </label>
+                    <br><br>
+                    
+                    <label for="colores"> Color  </label>
+                    <select id="colores">
+                        <option value="" selected>Seleccione un color</option><!--"Selected para que el valor seleccionado sea que el que elija el usuario"-->
+                        <option value="Azul">Azul</option>
+                        <option value="Rojo">Rojo</option>
+                        <option value="Negro">Negro</option>
+                    </select>
+                    <br><br>
+                    
+                    <datalist id="listatelefonos"><!--se autocompleta de una lista predefinidad "Datalist"-->
+                        <option value="3103698789" label="Casa">
+                        <option value="3123788726" label="Oficina">
+                    </datalist>
+                    <label for="telefono">Teléfono </label>
+                    <input id="telefono" type="tel" list="listatelefonos"><!--Se puede ingresar un telefono y autocompleta de la 'list="listatelefonos'"-->
+                    <br><br>
+                    
+                    <label for="color">Color </label>
+                    <input id="color" type="color" value="#99BB00">
+                    <br><br>
+                    
+                    <label for="satisfaccion">Nivel de Satisfacción </label>
+                    <input id="satisfaccion" type="range" min="0" max="5" value="3"><!--Utiliza rango "type="range" deslizador y establece max 5 y min 0 en intervalos de 3"-->
+                    <br><br>
+
+                    <label for="comentario">Comentarios </label><br>
+                    <textarea id="comentario" rows="6" cols="60" placeholder="Escriba un comentario" spellcheck="true"></textarea><!--spellcheck autocorrector, placeholder texto no seleccionable que desaparece-->
+                    <br><br>
+                    <!--Los eventos suelen estar asociados a los botones-->
+                    <button id="limpiar" type="reset" style="border-style: double; background-color: cornflowerblue;">LIMPIAR</button>
+                    <br><br>
+                    
+                    <button id="enviar" type="submit" style="border-style: double; background-color: lightskyblue" onclick="alert('ENVIANDO DATOS')">ENVIAR</button>
+                    <br><br>
+                    
+                    <label for="boton">Botón Enviar</label><br>
+                    <input id="boton" type="image" src="Images\Img\IconoEnviar.png" width="50px" height="50px" onclick="alert('Este es el otro botón')">
+                    <br><br>
+                    
+                    <label></label>
+                </form>
+            
+            </section>
+            
+            <aside id="Lateral" class="lat" style="border-style: groove;" >
+                <h2>ESTA ES LA SECCIÓN LATERAL</h2>
+                <nav id="Menú_vertical" style="border-style: groove;">
+                    <ul>
+                        <li><a href="#">OPCIÓN A</a>
+                            <ul>
+                                <li><a href="#">OPCIÓN a</a></li>
+                                <li><a href="#">OPCIÓN b</a></li>
+                                <li><a href="#">OPCIÓN c</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">OPCIÓN B</a></li>
+                        <li><a href="#">OPCIÓN C</a></li>
+                    </ul>
+                    
+                    <details>
+                        <summary>OTRO MENÚ</summary>
+                        <p>
+                            <a href="#">OPCIÓN a</a><br>
+                            <a href="#">OPCIÓN b</a><br>
+                            <a href="#">OPCIÓN c</a>
+                        </p>
+                    </details>
+                </nav>
+            </aside>
+        
+        </main>
+        
+        <footer id="Pie_de_página" style="border-style: groove; text-align: center;">
+            <h5>ESTE ES EL PIE DE PÁGINA &checkmark;</h5>
+            <address>xxxx@xxx.com</address>
+            <address><a href="mailto: xxxx@xxx.com">xxxx@xxx.com</a></address>
+            <address><a href="tel: 0000000000">0000000000</a></address>
+            <small>&COPY; Derechos Reservados 2021</small>
+        </footer>
+    
+    </body>
+
+</html>
+<!--  -->
