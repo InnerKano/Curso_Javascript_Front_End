@@ -1,0 +1,98 @@
+* {
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;    
+}
+
+body {
+
+}
+
+header {
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    background-color: rgb(179, 203, 223);
+    text-align: center;
+    padding: 4px;   /* Distancia entre el borde del contenedor y el contenido*/
+}
+
+.nav1 {
+    height: 20px;
+    background-color: rgb(130, 192, 255);    
+    color: darkblue;
+    font-weight: bolder;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;  /* Menú Horizontal*/
+}
+
+.nav1:hover {
+    background-color: rgb(112, 230, 157);
+    color: rgb(6, 66, 48);  
+}
+
+main {
+    
+}
+
+section {
+   width: 75%;
+}
+
+#Seccion_1 {
+    height: 450px; 
+    position: relative;  /* Posiciona un elemento en relación a su posición normal*/
+    top: 0px;   /* top, right, bottom y left se utilizan junto con "position: relative;" */
+    left:23%;   /* para determinar el desplazamiento del elemento desde su posición original */
+}
+
+#art1 {
+    padding: 10px;
+}
+
+#P1 {
+    column-count: 3;
+    column-gap: 20px;   /* separación entre columnas*/
+    column-rule-style: double;
+    column-rule-color: rgb(57, 116, 175);
+    column-rule-width: 3px;
+}
+
+#art2 {
+    text-align: center;
+}
+
+#img1 {
+    width:200px; 
+    height:250px;
+}
+aside {
+    width: 20%;    
+    position: relative;
+    bottom: 420px; 
+    left: 0px;    
+}
+
+.nav2 {
+    height: 20px;
+    background-color: rgb(198, 140, 224);
+    color: rgb(91, 13, 110);
+    font-weight: bolder;
+    text-decoration: none;
+    padding: 5px;
+    margin: 3px;    /* Distancia entre el borde del contenedor y el exterior*/
+    display: block;   /* Menú vertical*/
+}
+
+.nav2:hover {   /* Propiedad que cambia el formato cuando se pasa el mouse por encima*/
+    background-color: rgb(241, 181, 141);
+    color: rgb(139, 59, 6); 
+}
+
+footer {
+    
+}
