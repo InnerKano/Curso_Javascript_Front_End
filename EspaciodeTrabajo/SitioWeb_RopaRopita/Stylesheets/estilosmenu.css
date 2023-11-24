@@ -3,7 +3,8 @@
 }
 
 body {
-
+    padding: auto;
+    background-color: black;
 }
 
 header {
@@ -12,18 +13,26 @@ header {
 
 h1 {
     text-align: center;
+    margin: 0;
+    color: white;
 }
 
-nav {
-    background-color: rgb(179, 203, 223);
-    text-align: center;
-    padding: 4px;   /* Distancia entre el borde del contenedor y el contenido*/
+.ContenedorGrid {  /*Desktop*/  /* Grilla para el diseño de la web */
+    width: 95%;    
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:    "H H H H"
+                            "N N N N" 
+                            "M M M M"
+                            "M M M M"
+                            "F F F F";  
 }
 
 .nav1 {
-    height: 20px;
-    background-color: rgb(130, 192, 255);    
-    color: darkblue;
+    height: 20px; 
+    color: rgb(255, 255, 255);
     font-weight: bolder;
     text-decoration: none;
     padding: 10px;
@@ -38,28 +47,23 @@ nav {
 main {
     
 }
-
-section {
-   width: 75%;
+#Section_Encabezado {
+    background-color: black;
+    grid-area: H;  
 }
 
 #Seccion_1 {
-    height: 450px; 
-    position: relative;  /* Posiciona un elemento en relación a su posición normal*/
-    top: 0px;   /* top, right, bottom y left se utilizan junto con "position: relative;" */
-    left:23%;   /* para determinar el desplazamiento del elemento desde su posición original */
+    /* top, right, bottom y left se utilizan junto con "position: relative;" */
+    /* para determinar el desplazamiento del elemento desde su posición original */
+    grid-area: H;  
 }
 
 #art1 {
-    padding: 10px;
-}
-
-#P1 {
-    column-count: 3;
-    column-gap: 20px;   /* separación entre columnas*/
-    column-rule-style: double;
-    column-rule-color: rgb(57, 116, 175);
-    column-rule-width: 3px;
+    background-color: black;
+    color: white;
+    
+    margin: 0;
+    grid-area: M;
 }
 
 #art2 {
@@ -70,13 +74,10 @@ section {
     width:200px; 
     height:250px;
 }
-aside {
-    width: 20%;    
-    position: relative;
-    bottom: 420px; 
-    left: 0px;    
-}
 
+#Lateral_izq {
+    background-color: W;
+}
 .nav2 {
     height: 20px;
     background-color: rgb(198, 140, 224);
@@ -94,5 +95,8 @@ aside {
 }
 
 footer {
-    
+    background-color: azure;
+    grid-area: F;
+    text-align: center;
+    font-weight: bold;
 }
