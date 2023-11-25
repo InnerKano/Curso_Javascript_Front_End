@@ -4,99 +4,150 @@
 
 body {
     padding: auto;
-    background-color: black;
+    background-color: rgb(250 249 248);
 }
 
-header {
-    
-}
+div{
 
-h1 {
-    text-align: center;
-    margin: 0;
-    color: white;
 }
-
 .ContenedorGrid {  /*Desktop*/  /* Grilla para el diseño de la web */
     width: 95%;    
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 1px;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(5, auto);
     grid-template-areas:    "H H H H"
                             "N N N N" 
-                            "M M M M"
-                            "M M M M"
+                            "A M M M"
+                            "A M M M"
                             "F F F F";  
 }
 
-.nav1 {
-    height: 20px; 
-    color: rgb(255, 255, 255);
+header{
+    height: 100px; 
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    grid-area: H;   /* Identificador para la grilla */
+}
+h1{
+    vertical-align: text-bottom;
+    color: black;
+}
+/*Barra de navergacion*/
+
+nav {
+    text-align: center;
     font-weight: bolder;
+
+    grid-area: N;    
+}
+
+.FlexboxNav1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: stretch;
+    list-style-type: none;  
+}
+
+.Nav1 {   
+    color: black;
     text-decoration: none;
-    padding: 10px;
-    display: inline-block;  /* Menú Horizontal*/
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
 }
 
-.nav1:hover {
-    background-color: rgb(112, 230, 157);
-    color: rgb(6, 66, 48);  
+.Nav1:hover {
+    background-color:darkred;
+    color: white;  
 }
 
-main {
-    
-}
-#Section_Encabezado {
-    background-color: black;
-    grid-area: H;  
-}
-
-#Seccion_1 {
-    /* top, right, bottom y left se utilizan junto con "position: relative;" */
-    /* para determinar el desplazamiento del elemento desde su posición original */
-    grid-area: H;  
+.FlexboxNav1_1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: center; 
+    list-style-type: none; 
+    position: absolute; 
 }
 
-#art1 {
-    background-color: black;
+.Nav1_1 {
+    /*background-color: rgb(130, 192, 255);*/
+    background-color: rgba(0, 0, 0, 0.692);    
     color: white;
-    
-    margin: 0;
+    text-decoration: none;
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-left: 20px;
+
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;  
+    border-radius: 2px;  
+    min-width: 100px; /* Ajusta este valor según tus necesidades */
+    text-align: center; /* Centra el texto en el botón */
+}
+
+.Nav1_1:hover {
+    background-color:darkred;
+    color: white;   
+}
+
+.FlexboxNav1_1 {
+    display: none;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+
+main{
     grid-area: M;
 }
-
-#art2 {
-    text-align: center;
-}
-
-#img1 {
-    width:200px; 
-    height:250px;
-}
-
-#Lateral_izq {
-    background-color: W;
-}
-.nav2 {
-    height: 20px;
-    background-color: rgb(198, 140, 224);
-    color: rgb(91, 13, 110);
-    font-weight: bolder;
-    text-decoration: none;
-    padding: 5px;
-    margin: 3px;    /* Distancia entre el borde del contenedor y el exterior*/
-    display: block;   /* Menú vertical*/
-}
-
-.nav2:hover {   /* Propiedad que cambia el formato cuando se pasa el mouse por encima*/
-    background-color: rgb(241, 181, 141);
-    color: rgb(139, 59, 6); 
+aside{
+    grid-area: A;
 }
 
 footer {
-    background-color: azure;
-    grid-area: F;
+    background-color: aliceblue;
     text-align: center;
     font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    padding-bottom: 30px;
+    grid-area: F;
+}
+
+@media screen and (max-width: 900px) and (min-width: 551px) { /*Tablet*/
+    .ContenedorGrid {        
+        grid-template-columns: repeat(3, 33.3%);
+        grid-template-rows: repeat(4, auto);
+
+        grid-template-areas:    "H H H"
+                                "N N N"
+                                "M M M"                                                                
+                                "A F F"; 
+    }
+}
+
+@media screen and (max-width: 550px) {  /*smartphone*/
+    .ContenedorGrid {        
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(5, auto);
+
+        grid-template-areas:    "H H"
+                                "N N"
+                                "M M"
+                                "A A"                                
+                                "F F"; 
+    }
 }
