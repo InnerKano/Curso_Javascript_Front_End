@@ -18,8 +18,8 @@ div{
     grid-template-rows: repeat(5, auto);
     grid-template-areas:    "H H H H"
                             "N N N N" 
-                            "A M M M"
-                            "A M M M"
+                            "M M M M"
+                            "M M M M"
                             "F F F F";  
 }
 
@@ -113,12 +113,59 @@ nav ul li:hover > ul {
 main{
     grid-area: M;
 }
-aside{
-    grid-area: A;
+aside {
+    width: 0;
+    height: 100%;
+    top: 50px;
+    position: fixed; /* Cambiado a fixed para que no se desplace con la página */
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: rgba(70, 68, 69, 0.9);
+    z-index: 2; /* Asegura que la barra lateral tenga un índice z más bajo que el botón */
 }
 
+.FlexboxNav2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: stretch;    
+}
+
+.Nav2 {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.Nav2:hover {
+    background-color: darkred;
+    color: white;  
+}
+
+#toggleBtn {
+    background-color: rgb(250, 249, 248);
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 3; /* Asegura que el botón tenga un índice z más alto que la barra lateral */
+    color: black; /* Color del texto */
+    padding: 10px 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave al cambiar el color de fondo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+#toggleBtn:hover {    
+    background-color: darkred;
+    color: white;   /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+
 footer {
-    background-color: aliceblue;
+    background-color: rgb(250 249 248);
     text-align: center;
     font-weight: bold;
     margin: 10px;
