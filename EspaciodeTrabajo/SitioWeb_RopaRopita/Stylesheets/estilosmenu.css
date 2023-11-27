@@ -162,7 +162,13 @@ aside {
     color: white;   /* Cambia el color de fondo al pasar el mouse */
 }
 
-
+.catalogo {
+    margin: 15px; /* Espacio alrededor de las imágenes */
+    object-fit: cover; /* Para que las imágenes se ajusten al tamaño especificado */
+}
+.catalogo img{
+    width: 150px;
+}
 
 footer {
     background-color: rgb(250 249 248);
