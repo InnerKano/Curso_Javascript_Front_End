@@ -4,6 +4,7 @@
 
 body {
     padding: auto;
+    margin: 0;
     background-color: rgb(250 249 248);
 }
 
@@ -11,7 +12,8 @@ div{
 
 }
 .ContenedorGrid {  /*Desktop*/  /* Grilla para el diseño de la web */
-    width: 95%;    
+    width: 100%;  
+    
     display: grid;
     grid-gap: 1px;
     grid-template-columns: repeat(4, 25%);
@@ -109,10 +111,15 @@ nav ul li:hover > ul {
     display: block;
 }
 
+/* main */
 
 main{
     grid-area: M;
+    padding: 20px;
+    
 }
+
+/* Barra lateral */
 aside {
     width: 0;
     height: 100%;
@@ -146,7 +153,7 @@ aside {
 #toggleBtn {
     background-color: rgb(250, 249, 248);
     position: fixed;
-    left: 10px;
+    left: 0px;
     top: 10px;
     z-index: 3; /* Asegura que el botón tenga un índice z más alto que la barra lateral */
     color: black; /* Color del texto */
