@@ -109,19 +109,19 @@ a Decimal => Number(), parseFloat()
 //console.log(typeof(dato1));   
 //console.log(typeof(dato2));
 
-// //String a entero
-// let dato3 = '45';
-// console.log(typeof(dato3));
+//String a entero
+//let dato3 = '45';
+//console.log(typeof(dato3));
 
-// dato3 = parseInt(dato3);
-// console.log(typeof(dato3));
+//dato3 = parseInt(dato3);
+//console.log(typeof(dato3));
 
 
-// //String a decimal
-// let dato4 = '4.5';
-// console.log(typeof(dato4));
-// console.log(dato4);
-// dato4 = Number(dato4)
+//String a decimal
+//let dato4 = '4.5';
+//console.log(typeof(dato4));
+//console.log(dato4);
+
 //dato4 = parseFloat(dato4);
 //console.log(typeof(dato4)); 
 //console.log(dato4);

@@ -2,83 +2,109 @@
 
 /* FUNCIONES */
 
-//var sumar = function (a, b , c=3){         // Argumento opcional. Si no lo envío toma el valor por defecto
-//    return a + b + c;
-//}
+// function restar(a, b){    
+//     return a - b;
+// }
 
-//var result = sumar(4, 5, 8);
-//console.log(result);
+// var result = restar(4, 5);
+// console.log(result);
 
-//var restul1 = sumar(3, 7);
-//console.log(restul1);
 
-//console.log(sumar(4, 8));
+// Otra forma asignando una función a una variable
 
+// var sumar = function (a, b , c=3){         // Argumento opcional. Si no lo envío toma el valor por defecto
+//     return a + b + c;
+// }
+
+// var result1 = sumar(4, 5, 8);
+// console.log(result1);
+
+// var restul2 = sumar(3, 7);
+// console.log(restul2);
+
+// console.log(sumar(4, 8));
+
+// var num_mayor = function (a, b){         // Argumento opcional. Si no lo envío toma el valor por defecto
+//     if(a>b)
+//         return a;
+//     else
+//         return b;
+    
+// }
+// console.log(num_mayor(4, 8));
 
 
 /* FUNCIONES RECURSIVAS */
 
-//function factorial(n){
-//    if((n == 0) || (n == 1))
-//       return 1;
-//    else    
-//       return(n * factorial(n - 1));
-//}
+// function factorial(n){
+//    if((n == 0) || (n == 1)){
+//         return 1;
+//    }
+      
+//    else{
+//     console.log(n);
+//     return(n * factorial(n - 1));
+    
+//    }    
+// }
 
-//console.log(factorial(5));
-
-// Otra forma asignando una función a una variable
-
-//var factorial2 = function(n){
-//    if((n == 0) || (n == 1))
-//        return 1;
-//    else    
-//        return(n * factorial2(n - 1));
-//}
-
-//console.log(factorial2(4));
+// console.log(factorial(4));
 
 
-/* FUNCIONES FLECHA */
+// /* FUNCIONES FLECHA */
 
-//var acceso = true;
+// var acceso = true;
 
-//var accesoU = function(a){
+// function acceder(a){
+//     return a;
+//  }
+ 
+//  console.log(acceder(150));
+
+// //  //esta es la misma funcion de arriba abreviada. Se una cuando la función retorna un solo valor
+// acceder = a => a;  
+
+// console.log(acceder(200));
+
+
+// var acceder = function(a){
 //    return a;
-//}
+// }
 
-// esta es la misma funcion de arriba abreviada. Se una cuando la función retorna un solo valor
-//var accesoU = a => a;  
+// var acceder = a => a;  
 
 //Así se hace cuando no se pasan parámetros y se retorna sólo un valor
-//var accesoU = () => false;  
+
+// var acceder = () => false;  
+
+// console.log(acceder());
 
 // Para pasar más de 1 parámetro se usa paréntesis
-//var accesoU = (a,n) => console.log(`Usuario: ${n} - Acceso: ${a}`);  
-//accesoU(acceso, 'Vonny');
+
+// var acceder = (a,n) => console.log(`Usuario: ${n} - Acceso: ${a}`);  
+
+// acceder(acceso, 'Vonny');
 
 // Para pasar más de 1 parámetro y tiene más de una instrucción
 
-//var accesoU = (a,n) => {
-//    console.log(`Usuario ${n} en ejecución`);
-//    return a;
-//} 
+acceder = (a,n) => {
+   console.log('Usuario ${n} en ejecución');
+   return a;
+} 
 
-//accesoU(acceso, 'Vonny') == true
-//? console.log('Usuario permitido')
-//: console.log('Usuario denegado');
+// console.log(acceder(acceso, 'Vonny'));
 
-//var fecha = new Date();
-//console.log("Hoy es: " + fecha.getDate() + "/" + (fecha.getMonth()+1) + "/" + fecha.getFullYear());
-//console.log(fecha);
+
+// acceder(acceso, 'Vonny') == true
+// ? console.log('Usuario permitido')
+// : console.log('Usuario denegado');
 
 
 /* ARREGLOS - LISTAS */
 
-//var nombres = ['Grover', 'Carlos', 'Ana', 'Luisa'];
-//var vegetales = new Array('Tomate', 'Lechuga', 'Zanahoria');
+// var nombres = ['Grover', 'Carlos', 'Ana', 'Luisa'];
 
-//var miArray = ["nombre", 2020, ["otro array", 23,5], miFun(true), persona]   // persona es un objeto definido previamente
+// var vegetales = new Array('Tomate', 'Lechuga', 'Zanahoria');
 
 // console.log(nombres[3]);     // los índices comienzan en 0 hasta n-1
 // console.log(vegetales[1]);
@@ -87,38 +113,78 @@
 // vegetales[2] = 'Nabo';
 
 // console.log(nombres[0]);
+// console.log(nombres);
 // console.log(vegetales[2]);
+// console.log(vegetales);
 
-//console.log(nombres.length);     // tamaño del arreglo
+// console.log(nombres.length);     // tamaño del arreglo
 
-//for(var i = 0; i <= nombres.length - 1; i++){
+
+// // RECORRER TODA LA LISTA CON FOR
+
+// for(var i = 0; i <= nombres.length - 1; i++){
 //    console.log(nombres[i]);
-//}
+// }
 
-//vegetales.forEach(function(elemento, indice, array){
-//     console.log(elemento, indice, array);}
+// // RECORRER TODA LA LISTA CON FOREACH FOR ESPECIAL PARA LAS LISTAS
+
+// vegetales.forEach(function(elemento, indice, array){
+//                             console.log(elemento, indice, array);}
 //     )
 
-//console.log('Array: ' + nombres);
-//console.log(nombres);
+// // console.log('Array: ' + nombres);
+// console.log(nombres);
 
-//nombres.push('Pedro');                     //agrega uno al final del arreglo
-//console.log('push Pedro: ' + nombres);
 
-//nombres.unshift('Lili');                  // agrego al principio
-//console.log('unshift Lili: ' + nombres);
+// PUSH AND POP / UNSHIFT AND SHIFT
 
-//nombres.pop();                            // saco el último elemento
-//console.log('pop: ' + nombres);
+// nombres.push('Pedro');                     //agrega uno al final del arreglo
+// console.log('push Pedro: ' + nombres);
 
-//nombres.shift();                          // saco el primer elemento    
-//console.log('shift: ' + nombres);
+// nombres.unshift('Lili');                  // agrego al principio
+// console.log('unshift Lili: ' + nombres);
 
-//nombres.shift();                          // saco el primer elemento    
-//console.log('shift: ' + nombres);
+// nombres.pop();                            // saco el último elemento
+// console.log('pop: ' + nombres);
 
-//var pos = nombres.indexOf('Carlos');     // índice de un elemento
-//console.log(pos);
+// nombres.shift();                          // saco el primer elemento    
+// console.log('shift: ' + nombres);
 
-//nombres.splice(2, 2);  // splice(i, n) elimina apartir del índice i, n elementos
-//console.log(nombres);
+// var pos = nombres.indexOf('Ana');     // índice de un elemento
+// console.log(pos);
+
+// nombres.push('Pedro', 'María', 'Andrés'); 
+// console.log('Nombres: ' + nombres);
+
+// nombres.unshift('Lili', 'Grover', 'Vonny'); 
+// console.log('Nombres: ' + nombres);
+
+// nombres.splice(2, 3);               // splice(i, n) elimina apartir del índice i, n elementos
+// console.log(nombres);
+
+
+// // LLENAR UNA LISTA CON DATOS DESDE EL TECLADO
+
+// var num = [];
+
+// // for(var i = 0; i < 5; i++){
+// //     num[i] = prompt("Digita un número: ");   // Leer datos desde el teclado - todo entra como string
+// // }
+// var i=0;
+
+// do{
+//     num[i] = i;
+//     i+=2;
+// }
+// while(i<10)
+// console.log(num);
+
+
+
+// // TIPOS DE DATOS EN UNA LISTA
+
+// miFun = (a, b) => a+b;
+
+// var miArray = ["nombre", 2020, ["otro array", 23,5], miFun(2,3)];   
+
+// console.log(miArray);
