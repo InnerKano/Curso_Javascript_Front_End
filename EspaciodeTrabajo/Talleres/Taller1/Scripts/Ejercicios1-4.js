@@ -1,21 +1,31 @@
+import {mini_menu_ejercicio_5} from './Ejercicios5.js';// 1. Leer dos números desde el teclado y multiplicarlos. Mostrar el resultado por consola.
 
 // 1. Leer dos números desde el teclado y multiplicarlos. Mostrar el resultado por consola.
-ejercicio_1 = function (a,b){
+let ejercicio_1 = function (a, b) {
     return a * b;
 }
-mini_menu_ejercicio_1 = function(){
+let mini_menu_ejercicio_1 = function(){
     console.log("CALCULADORA DE PRODUCTOS ENTRE DOS NUMEROS: a * b");
     let a = parseFloat(prompt("CALCULADORA DE PRODUCTOS ENTRE DOS NUMEROS: a * b\nIngrese un numero [a]: "));
     let b = parseFloat(prompt("Ingrese un numero [b]: "));
     console.log(`El resultado de: ${a} x ${b} = ${ejercicio_1(a,b)}`);
 } 
-// 2. Leer un número desde el teclado y determinar si es par o impar.
-ejercicio_2 = function (a){
-    return a;
-}
 
+// 2. Leer un número desde el teclado y determinar si es par o impar.
 // 3. Crear una función que determine si un número es par o impar.
 
+let ejercicio_2 = function (a){
+    if(a%2 == 0)
+        return "SI es par";
+    else
+        return "NO es par";
+}
+let mini_menu_ejercicio_2 = function(){
+    console.log("DETERMINAR SI ES PAR O IMPAR: [a]");
+    let a = parseFloat(prompt("DETERMINAR SI ES PAR O IMPAR: [a]\nIngrese un numero [a]: "));
+    console.log(`El numero: [${a}] ${ejercicio_2(a)}`);
+
+}
 
 // 4. Crear una lista de números desde el teclado, ingresando números hasta que el
 // usuario ingrese un valor de -1. Una vez termine de ingresar los números, se deberán
@@ -23,15 +33,46 @@ ejercicio_2 = function (a){
 // final debe ser añadido al final de la lista y luego se deberá mostrar la lista por consola.
 
 
+let mini_menu_ejercicio_3 = function(){
+    let a;
+    let Numeros = [];
+    let producto = 1;
+    console.log("LISTA DE NUMEROS Y MULTIPLICA LOS IMPARES");
+    do{
+        a = parseInt(prompt("Lista de numeros:\nIngrese un numero [-1 para terminar]: "));
+        if(!isNaN(a) && a!=-1){
+            console.log(a);
+            Numeros.push(a);
+            if((Numeros.indexOf(a))%2 != 0)
+                producto = producto * a;
+        }
+    }
+    while(a!=-1);
+    Numeros.push(producto);
+    console.log("Numeros: ", Numeros);
+}   
 
-menu = function(opcion){
-    if(opcion=1){
+
+//menu
+// ... (código existente)
+
+// Añade mini_menu_ejercicio_4 al menú
+let menu = function(opcion) {
+    if(opcion == 1) {
         mini_menu_ejercicio_1();
+    } else if(opcion == 2) {
+        mini_menu_ejercicio_2();
+    } else if(opcion == 3) {
+        mini_menu_ejercicio_3();
+    } else if(opcion == 4) {
+        mini_menu_ejercicio_5();
     }
-    else if(opcion=2){
-        console.log(ejercicio_1(2,3));
-    }
-
 }
+let opcion;
+do{
+    opcion = parseInt(prompt("Lista de numeros:\nIngrese un numero [-1 para terminar]: "));
+    menu(opcion);
+}
+while(opcion != -1)
 
-menu(1);
+
