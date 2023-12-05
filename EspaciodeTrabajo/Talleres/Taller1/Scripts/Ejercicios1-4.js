@@ -41,7 +41,6 @@ let mini_menu_ejercicio_3 = function(){
     do{
         a = parseInt(prompt("Lista de numeros:\nIngrese un numero [-1 para terminar]: "));
         if(!isNaN(a) && a!=-1){
-            console.log(a);
             Numeros.push(a);
             if((Numeros.indexOf(a))%2 != 0)
                 producto = producto * a;
@@ -69,10 +68,14 @@ let menu = function(opcion) {
     }
 }
 let opcion;
+let textmenu = "Taller 1\nPRÁCTICA DE DESARROLLO DE SITIOS WEB HTML, CSS Y JAVASCRIPT\n\n"+
+"1. CALCULADORA DE PRODUCTOS ENTRE DOS NUMEROS: a * b\n2. DETERMINAR SI ES PAR O IMPAR: [a]\n"+
+"3. LISTA DE NUMEROS Y MULTIPLICA LOS IMPARES\n4. CAJERO ELECTRONICO\n5. SALIR\n"+
+"Ingrese un numero correpondiente a la opcion deseadada: ";
 do{
-    opcion = parseInt(prompt("Lista de numeros:\nIngrese un numero [-1 para terminar]: "));
+    opcion = parseInt(prompt(`${textmenu}`));
     menu(opcion);
 }
-while(opcion != -1)
+while(opcion != 5)
 
 
