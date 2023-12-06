@@ -1,4 +1,5 @@
-import {BD_ejercicio_cajero} from "./BD_Ejercicio5.js";
+import { BD_ejercicio_cajero } from "./BD_Ejercicio5.js";
+
 // mini_menu_ejercicio_5.js
 
 export function mini_menu_ejercicio_5() {
@@ -6,69 +7,99 @@ export function mini_menu_ejercicio_5() {
     let usuariobool = false;
     let contraseñabool = false;
     let posicionusuario;
-    
+    let usuariotemp;
+
     // Busca la posición de usuariologin en el array de objetos
-
-    do{
-        let usuariologin = prompt("BANCO\nIngrese el usuario: ");
-        posicionusuario = usuarios.findIndex(usuario => usuario.nombre === usuariologin);     // índice de un elemento
+    
+    do {
+        let usuariologin = prompt("BANCO\n[-1 para volver]\n[-2 para ver los usuarios]\nIngrese el usuario: ");
+        let contraseñalogin;
+        if (usuariologin == '-1')
+            return;
+        if (usuariologin == '-2')
+            alert('USUARIOS DE EJEMPLO: '+ JSON.stringify(usuarios, null, 2));
+        posicionusuario = usuarios.findIndex(usuario => usuario.nombre === usuariologin); // índice de un elemento
         if (posicionusuario !== -1) {
-            usuariobool = true;
-            break;
-        } else {
-            console.log("Usuario no encontrado.");
-        }
-    }
-    while(posicionusuario === -1)
-/*     for(let i = 0; i <= usuarios.length - 1; i++){//ya existe una funcion
-        if (usuariologin === usuarios[i].nombre){
-            console.log('Usuario encontrado');
-            usuariobool = true;
-            posicionusuario = i;
-            break;
-        }
-    } */
-
-
-    if(usuariobool){
-        var transaccion;
-        while(transaccion !== '4'){
-            //inicializar variables
-            var saldocache = 0;
-            var usuariotemp = usuarios[posicionusuario];
-            transaccion = prompt("BANCO\n 1. Depositar\n 2. Retirar\n 3. Consultar\n 4. Salir\n Ingrese una opcion:");
             
-            switch(transaccion){
+            usuariotemp = usuarios[posicionusuario];
+            contraseñalogin = prompt(`Usuario: ${usuariologin}\n    Ingrese su contraseña: `);
+            if(usuariotemp.contraseña === contraseñalogin){
+                usuariobool = true;
+                contraseñabool = true;
+                break;
+            }
+            else
+                alert("Contraseña invalida.")
+        } 
+        else {
+            alert("Usuario no encontrado.");
+        }
+    } while (posicionusuario === -1 || (!usuariobool && !contraseñabool));
+
+    // Declarar usuariotemp fuera del bucle
+  
+
+    function depositarfun() {
+        let saldocache = 0;
+        saldocache = prompt("Depositar Menu\nIngrese un valor a depositar: ");
+        saldocache = parseFloat(saldocache);
+        usuariotemp.saldo += saldocache;
+        alert("Saldo Depositado: " + saldocache);
+        alert("Saldo Total: " + usuariotemp.saldo);
+    }
+
+    function retirarfun() {
+        let saldocache = 0;
+        alert();
+        let retirarbool = false;
+        do {
+            saldocache = prompt("'Retirar Menu'\nIngrese un valor a retirar: ");
+            saldocache = parseFloat(saldocache);
+            if (saldocache > usuariotemp.saldo) {
+                alert('No tiene suficiente dinero para realizar esta operación, vuelva a intentarlo con otro monto menor');
+            } else {
+                usuariotemp.saldo -= saldocache;
+                alert("Valor Retirado: " + saldocache);
+                alert("Nuevo Saldo: " + usuariotemp.saldo);
+                retirarbool = true;
+            }
+        } while (retirarbool == false);
+    }
+
+    // Elimina el corchete adicional al final de la función
+    // }
+
+    if (usuariobool && contraseñabool) {
+        let transaccion;
+        let transaccionmenutext = "BANCO\n 1. Depositar\n 2. Retirar\n 3. Consultar\n 4. Salir\n Ingrese una opcion: ";
+        while (transaccion !== '4') {
+            //inicializar variables
+            transaccion = prompt(`${transaccionmenutext}`);
+
+            switch (transaccion) {
                 case '1':
-                    console.log('Depositar Menu');
-                    saldocache = prompt("Ingrese un valor a depositar: ");
-                    saldocache = parseFloat(saldocache);
-                    usuariotemp.saldo += saldocache;
-                    console.log("Saldo Depositado: ", saldocache);
-                    console.log("Saldo Total: ", usuariotemp.saldo);
+                    depositarfun();
                     break;
                 case '2':
-                   console.log('Retirar Menu');
-                   saldocache = prompt("Ingrese un valor a retirar: ");
-                   saldocache = parseFloat(saldocache);
-                   usuariotemp.saldo -= saldocache;
-                   console.log("Saldo: ", usuariotemp.saldo);
-                   break;
+                    retirarfun();
+                    break;
                 case '3':
-                   console.log('Consultar Menu');
-                   console.log("Saldo: ", usuariotemp.saldo);
-                   break;
+                    alert('Consultar Menu');
+                    alert("Saldo: " + usuariotemp.saldo);
+                    break;
                 case '4':
-                    console.log('Saliendo del programa');
+                    alert('Saliendo del programa');
+                    usuariotemp = '0';
                     break;
                 default:
-                    console.log('Opcion invalida');
+                    alert('Opcion invalida');
             }
         }
     } else {
-        console.log('Usuario no existe: ', usuariologin);
+        alert('Usuario no existe: ' + usuariologin);
     }
 }
+
 /* 5. Desarrollar el programa del cajero electrónico con los siguientes criterios:
 a. Deberá tener un saldo predefinido.
 b. Al iniciar, se le debe indicar al usuario que está ingresando al cajero y se le

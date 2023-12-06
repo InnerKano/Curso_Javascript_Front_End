@@ -5,10 +5,9 @@ let ejercicio_1 = function (a, b) {
     return a * b;
 }
 let mini_menu_ejercicio_1 = function(){
-    console.log("CALCULADORA DE PRODUCTOS ENTRE DOS NUMEROS: a * b");
     let a = parseFloat(prompt("CALCULADORA DE PRODUCTOS ENTRE DOS NUMEROS: a * b\nIngrese un numero [a]: "));
     let b = parseFloat(prompt("Ingrese un numero [b]: "));
-    console.log(`El resultado de: ${a} x ${b} = ${ejercicio_1(a,b)}`);
+    alert(`El resultado de: ${a} x ${b} = ${ejercicio_1(a,b)}`);
 } 
 
 // 2. Leer un número desde el teclado y determinar si es par o impar.
@@ -21,9 +20,8 @@ let ejercicio_2 = function (a){
         return "NO es par";
 }
 let mini_menu_ejercicio_2 = function(){
-    console.log("DETERMINAR SI ES PAR O IMPAR: [a]");
     let a = parseFloat(prompt("DETERMINAR SI ES PAR O IMPAR: [a]\nIngrese un numero [a]: "));
-    console.log(`El numero: [${a}] ${ejercicio_2(a)}`);
+    alert(`El numero: [${a}] ${ejercicio_2(a)}`);
 
 }
 
@@ -37,9 +35,8 @@ let mini_menu_ejercicio_3 = function(){
     let a;
     let Numeros = [];
     let producto = 1;
-    console.log("LISTA DE NUMEROS Y MULTIPLICA LOS IMPARES");
     do{
-        a = parseInt(prompt("Lista de numeros:\nIngrese un numero [-1 para terminar]: "));
+        a = parseInt(prompt("LISTA DE NUMEROS Y MULTIPLICA LOS IMPARES:\nIngrese un numero [-1 para terminar]: "));
         if(!isNaN(a) && a!=-1){
             Numeros.push(a);
             if((Numeros.indexOf(a))%2 != 0)
@@ -48,7 +45,7 @@ let mini_menu_ejercicio_3 = function(){
     }
     while(a!=-1);
     Numeros.push(producto);
-    console.log("Numeros: ", Numeros);
+    alert("Numeros: "+ Numeros);
 }   
 
 
@@ -68,7 +65,7 @@ let menu = function(opcion) {
     }
 }
 let opcion;
-let textmenu = "Taller 1\nPRÁCTICA DE DESARROLLO DE SITIOS WEB HTML, CSS Y JAVASCRIPT\n\n"+
+let textmenu = "Taller 1 - Kevin Cano Bañol CC.1004669851\nPRÁCTICA DE DESARROLLO DE SITIOS WEB HTML+ CSS Y JAVASCRIPT\n\n"+
 "1. CALCULADORA DE PRODUCTOS ENTRE DOS NUMEROS: a * b\n2. DETERMINAR SI ES PAR O IMPAR: [a]\n"+
 "3. LISTA DE NUMEROS Y MULTIPLICA LOS IMPARES\n4. CAJERO ELECTRONICO\n5. SALIR\n"+
 "Ingrese un numero correpondiente a la opcion deseadada: ";
