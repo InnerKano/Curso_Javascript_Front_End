@@ -80,34 +80,17 @@
 // // Para no escribir la ubicación completa del nodo, puedo asignarla a un var o const y parto desde allí para trabajar con el Nodo
 // const div_grid = document.childNodes[1].childNodes[1].childNodes[0].childNodes[1].childNodes[1].childNodes[9];
 
-// // console.log('Nodo <div>:');
-// // console.log(div_grid);  // Nodo <div>
-
-
-// // console.log('Nombre del nodo <div>:');
-// // console.log(div_grid.nodeName);  // Nombre del nodo <div>
-// // console.log('Id del nodo <div>:');
-// // console.log(div_grid.id);  // Id del nodo <div>
-// // console.log('No. de hijos del nodo <div>:');
-// // console.log(div_grid.childNodes.length);  // Número de hijos del nodo <div>
-// // console.log('Hijos del nodo <div>:');
-// // console.log(div_grid.childNodes);  // Hijos del nodo <div>
-// // console.log('\n\n');
-// const mainbloqueprincipal = div_grid.childNodes[5];
-
-// // console.log('Nodo <main>:');
-// // console.log(mainbloqueprincipal);  // Nodo <div>
-// // console.log('Hijos del nodo <main>:');
-// // console.log(mainbloqueprincipal.childNodes);  // Hijos del nodo <div>
-// // console.log('\n\n');
-
-// cargadesdearchivoh2 = mainbloqueprincipal.childNodes[1].childNodes[3].childNodes[1].childNodes[5].childNodes[0].nodeValue;
-// console.log('Nodo <cargadesdearchivoh2 >:');
-// console.log(cargadesdearchivoh2);  // Nodo <div>
-// console.log('Hijos del nodo <main>:');
-// console.log(cargadesdearchivoh2.childNodes);  // Hijos del nodo <div>
+// console.log('Nodo <div>:');
+// console.log(div_grid);  // Nodo <div>
+// console.log('Nombre del nodo <div>:');
+// console.log(div_grid.nodeName);  // Nombre del nodo <div>
+// console.log('Id del nodo <div>:');
+// console.log(div_grid.id);  // Id del nodo <div>
+// console.log('No. de hijos del nodo <div>:');
+// console.log(div_grid.childNodes.length);  // Número de hijos del nodo <div>
+// console.log('Hijos del nodo <div>:');
+// console.log(div_grid.childNodes);  // Hijos del nodo <div>
 // console.log('\n\n');
-
 
 // console.log('Hijo[1] del nodo <div>: <header>');
 // console.log(div_grid.childNodes[1]);  // Hijo[1] del nodo <div>: <header>
@@ -128,7 +111,7 @@
 // console.log(div_grid.childNodes[5].childNodes[1].childNodes[1].childNodes[1].childNodes[3]); // Párrafo 1 <p id="p1">
 
 // const p1 = div_grid.childNodes[5].childNodes[1].childNodes[1].childNodes[1].childNodes[3];
-// console.log(p1);
+// //console.log(p1);
 // console.log('Nombre del nodo <p>:');
 // console.log(p1.nodeName);  // Nombre del nodo <p>
 // console.log('Id del nodo <p>:');
