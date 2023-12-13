@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Ivonne Castaño Osorio"/>
+        
+        <title>JAVASCRIPT</title>
+        <link href="Images\Favicon\favicon.ico" rel="icon" type="image/x-icon" sizes="32x32"/>
+        <link href="Images\Favicon\favicon-32x32.png" rel="icon" type="image/png" sizes="32x32"/>
+        <link href="Stylesheets\styles.css" rel="stylesheet"/>
+               
+    </head>
+
+    <body>
+        
+        <div id="grid" class="ContenedorGrid">
+
+            <header id="encabezado" class="">
+                <h1>EXPLORANDO EL DOM CON JAVASCRIPT</h1>     
+            </header>
+
+            <nav id="menu_1" class="">
+                <ul id="menu_principal" class="FlexboxNav1">
+                    <li><a href="index.html" id="opc1" class="Nav1">INICIO</a></li>
+                    <li><a href="#" id="opc2" class="Nav1">DOM</a></li>
+                    <li><a href="#" id="opc3" class="Nav1">FORMULARIO</a>
+                        <ul id="menu_desplegable" class="FlexboxNav1_1">
+                            <li><a href="formulario.html" id="opc4" class="Nav1_1">FORMS & BD</a></li>
+                            <li><a href="tabla_form.html" id="opc5" class="Nav1_1">TABLA</a></li>
+                        </ul>
+                    </li>
+                </ul>      
+            </nav>
+
+            <main id="bloque_principal" class="">
+                
+                <div id="grid_main" class="ContenedorGridMain">
+                    
+                    <section id="seccion1" class="">
+                            
+                        <article id="art1" class="">
+
+                            <h2 id="h21" name="titulo2-1" >DOM: DOCUMENT OBJECT MODEL</h2> 
+
+                            <p id="p1" class="parrafo">
+                                Una de las mayores potencialidades de JavaScript es que puede manipular 
+                                cualquier elemento de una página web y modificar su contenido, su tamaño, su color, 
+                                su posición e incluso hacer aparecer y desaparacer elementos. 
+                                Para hacer esto posible necesitamos identificar con precisión cada elemento de una 
+                                página web para poder indicarle a JavaScript sobre qué elemento debe operar.
+                            </p>
+
+                            <p id="p2" class="parrafo">
+                                Para permitir que los lenguajes de programación pudieran extraer información 
+                                o manipular cualquier elemento de una página web era necesario definir de alguna 
+                                manera qué tipos de elementos conforman una página web, cómo nombrarlos y 
+                                cómo se relacionan entre sí. Inicialmente esto resultaba bastante problemático, 
+                                ya que no existía un estándar o especificación oficial sobre cómo debia realizarse esto. 
+                                Para evitar los problemas de falta de estandarización, un organismo internacional 
+                                <b>World Wide Web Consortium (W3C)</b> definió un estándar denominado <b>DOM ó Document Object Model</b> 
+                                (Modelo de objetos para representar documentos) que define qué elementos se considera que conforman 
+                                una página web, cómo se nombran, cómo se relacionan entre si y cómo se puede acceder a ellos.
+                            </p>
+
+                        </article> 
+                        
+                    </section>
+                    
+                    <section id="seccion2" class="">
+                            
+                        <article id="art2" class="">
+
+                            <h2 id="h22" name="titulo2-2">ESTRUCTURA DEL DOM</h2>
+
+                            <figure id="fig1">
+
+                                <img id="img1" src="Images\Img\dom.jpg" alt="Esta imagen contiene el esquema del DOM para un sitio genérico">
+                                <figcaption id="fcp1">Esquema de un DOM</figcaption>
+
+                            </figure>
+
+                            <h2 id="h23" name="titulo2-3">CARGA DESDE ARCHIVO</h2>
+
+                            <input id="select_file" type="file" accept=".txt,.csv,.json" hidden> 
+                            <!-- accept="image/*" para cualquier tipo de imágenes o accept=".pdf" para pdf o
+                                accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" para excel -->
+
+                            <p id="p3" class="parrafo">
+
+                            </p>
+
+                            <iframe id="pdfframe" title="Ejemplo de Frame para PDF" src="" hidden>
+                            </iframe> 
+
+                        </article>                        
+
+                    </section>
+
+                </div>
+
+            </main>
+
+            <aside id="lateral_izq" class="">
+                
+                <nav id="menu_secundario" class="FlexboxNav2">
+                    <a href="#" class="Nav2">ENLACE 1</a>
+                    <a href="#" class="Nav2">ENLACE 2</a>
+                    <a href="#" class="Nav2">ENLACE 3</a>
+                    <a href="#" class="Nav2">MÁS...</a>         
+                </nav>
+
+            </aside>
+
+            <footer id="pie_pagina" class="" >
+                
+                <address><a href="mailto: contacto@cursojs.com">contacto@cursojs.com</a></address>
+                <small>&copy; Derechos Reservados 2023</small><br><br>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">
+                <img alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+                <br><small><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Prácticas Fundamentales de Javascript </span>por 
+                <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Ivonne Castaño Osorio</span> 
+                <br>se distribuye bajo una<br> 
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional.</a></small>
+
+            </footer>
+        
+        </div>
+
+        <!-- Si el script se encuentra en la cabecera <head> del documento HTML, 
+            es posible que se ejecute antes de que el navegador haya terminado de 
+            construir el DOM y algunos nodos no serán reconocidos. Para solucionar esto, 
+            se coloca el script justo antes del cierre de la etiqueta </body> -->
+
+        <!-- <script type="application/javascript" src="Scripts_Js/05_estructura_dom.js"></script> -->
+        <script type="application/javascript" src="Scripts_Js/06_manipulacion_dom.js"></script>    
+
+    </body>
+
+</html>
+<!--  -->

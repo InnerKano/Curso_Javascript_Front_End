@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Ivonne Castaño Osorio"/>
+        
+        <title>JAVASCRIPT</title>
+        <link href="Images\Favicon\favicon.ico" rel="icon" type="image/x-icon" sizes="32x32"/>
+        <link href="Images\Favicon\favicon-32x32.png" rel="icon" type="image/png" sizes="32x32"/>
+        <link href="Stylesheets\styles.css" rel="stylesheet"/>
+               
+    </head>
+
+    <body>
+        
+        <div id="grid" class="ContenedorGrid">
+
+            <header id="encabezado" class="">
+                <h1>MANEJO DE FORMULARIOS MEDIANTE EL DOM CON JAVASCRIPT</h1>     
+            </header>
+
+            <nav id="menu_1" class="">
+                <ul id="menu_principal" class="FlexboxNav1">
+                    <li><a href="index.html" id="opc1" class="Nav1">INICIO</a></li>
+                    <li><a href="dom.html" id="opc2" class="Nav1">DOM</a></li>
+                    <li><a href="#" id="opc3" class="Nav1">FORMULARIO</a>
+                        <ul id="menu_desplegable" class="FlexboxNav1_1">
+                            <li><a href="#" id="opc4" class="Nav1_1">FORMS & BD</a></li>
+                            <li><a href="tabla_form.html" id="opc5" class="Nav1_1">TABLA</a></li>
+                        </ul>
+                    </li>
+                </ul>      
+            </nav>
+
+            <main id="bloque_principal" class="">
+                
+                <div id="grid_main" class="ContenedorGridMain">
+                    
+                    <section id="seccion1" class="">
+                            
+                        <h2 id="h21" name="titulo2-1" >FORMULARIO</h2>
+                        
+                        <form id="formulario" autocomplete="on">
+
+                            <input id="indice" type="text" value="" hidden><br>
+
+                            <label for="nombre">Nombre </label><br>
+                            <input id="nombre" type="text" value="">
+                            <br><br>
+
+                            <label for="apellido">Apellido </label><br>
+                            <input id="apellido" type="text" value="">
+                            <br><br>
+
+                            <select id="listado" >
+                                <option value="" selected disabled>Seleccione el registro que desea cargar</option> 
+                            </select>
+                            <br><br>
+
+                            <input id="btsave"type="button" value="Guardar" onclick="guardarDatos()">
+                            <input id="btfind"type="button" value="Buscar" onclick="buscarDatos()">
+                            <input id="btupdate" type="button" value="Actualizar" onclick="actualizarDatos()">
+                            <input id="btdelete" type="button" value="Eliminar" onclick="eliminarDatos()">
+                            <br><br>
+                            <input id="btreset"type="reset" value="Limpiar">
+                            <input id="btsearch"type="button" value="Listar Todo" onclick="mostrarDatos()">
+
+                        </form>
+                        
+                    </section>
+                    
+                    <section id="seccion2" class="">
+                        
+                    </section>
+
+                </div>
+
+            </main>
+
+            <aside id="lateral_izq" class="">
+                
+                <nav id="menu_secundario" class="FlexboxNav2">
+                    <a href="#" class="Nav2">ENLACE 1</a>
+                    <a href="#" class="Nav2">ENLACE 2</a>
+                    <a href="#" class="Nav2">ENLACE 3</a>
+                    <a href="#" class="Nav2">MÁS...</a>         
+                </nav>
+
+            </aside>
+
+            <footer id="pie_pagina" class="" >
+                
+                <address><a href="mailto: contacto@cursojs.com">contacto@cursojs.com</a></address>
+                <small>&copy; Derechos Reservados 2023</small><br><br>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">
+                <img alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+                <br><small><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Prácticas Fundamentales de Javascript </span>por 
+                <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Ivonne Castaño Osorio</span> 
+                <br>se distribuye bajo una<br> 
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional.</a></small>
+
+            </footer>
+        
+        </div>
+
+        <script type="application/javascript" src="Scripts_Js/07_form_and_bd_dom.js"></script>    
+
+    </body>
+
+</html>
+<!--  -->
