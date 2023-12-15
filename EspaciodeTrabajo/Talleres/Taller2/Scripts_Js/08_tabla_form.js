@@ -226,20 +226,22 @@ function imprimirBD() {
         var cursor = event.target.result;
 
         if (cursor) {
+            var indice = cursor.value.indice;
             var alimento = cursor.value.alimento;
             var calorias = cursor.value.calorias;
             var grasas = cursor.value.grasas;
             var proteina = cursor.value.proteina;
             var carbohidratos = cursor.value.carbohidratos;
 
-            var nuevoCodigoHtml = '<tr><td>'+ alimento +'</td>' +
+            var nuevoCodigoHtml = '<tr id="data_table"><td hidden>'+ indice +'</td>'+
+                '<td>'+ alimento +'</td>' +
                 '<td>'+ calorias +'</td>' +
                 '<td>'+ grasas + '</td>' +
                 '<td>'+ proteina + '</td>' +
                 '<td>'+ carbohidratos +'</td>' +
-                '<td><span class="editar" onclick="transformarEnEditable(this)">Editar</span></td></tr>';
+                '<td><span class="editar" onclick="transformarEnEditable(this)">Editar</span><span class="editar" onclick="deleteData(this)">Eliminar</span> </td></tr>';
 
-            var tabla = document.getElementById('tbl');
+            var tabla = document.getElementById('tbody_data_table');
 
             tabla.innerHTML += nuevoCodigoHtml;
 
@@ -252,6 +254,66 @@ function imprimirBD() {
 
 /****************************************************************************/
 //FUNCIONES CRUD (Create/Guardar, Read/Buscar, Update/Actualizar, Delete/Eliminar)
+/****************************************************************************/
+// EDICIÓN DE TABLAS CREATE
+
+var añadiendo = false;
+
+function transformarEnEditableCreate(nodo) { //El nodo recibido es SPAN
+    
+    if (añadiendo == false) {
+        var nodoTd = nodo.parentNode; //Nodo Td: Celda
+        var nodoTr = nodoTd.parentNode; //Nodo Tr: Fila
+        var nodosEnTr = nodoTr.getElementsByTagName('td');
+
+        // Se guarda el contenido de cada celda de la fila seleccionada
+        var alimento = nodosEnTr[0].textContent; 
+        var calorias = nodosEnTr[1].textContent;
+        var grasas = nodosEnTr[2].textContent; 
+        var proteina = nodosEnTr[3].textContent;
+        var carbohidratos = nodosEnTr[4].textContent; 
+        var editar = nodosEnTr[5].textContent;
+
+        // Creación del input
+        var nuevoCodigoHtml = '<td><input type="text" id="alimento" value="' + alimento + '" size="10"></td>' +
+        '<td><input type="text" id="calorias" value="' + calorias + '" size="5"></td>' +
+        '<td><input type="text" id="grasas" value="' + grasas + '" size="5"></td>' +
+        '<td><input type="text" id="proteina" value="' + proteina + '" size="5"></td>' +
+        '<td><input type="text" id="carbohidratos" value="' + carbohidratos + '" size="5"></td>' + 
+        '<td>Añadiendo</td>'; 
+
+        nodoTr.innerHTML = nuevoCodigoHtml;
+
+        var nodoBotonesForm = document.getElementById('botonesform');
+
+        nodoBotonesForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para anularlos' +
+        '<form id = "form_botones" action="#" method="get" onsubmit="capturarEnvioCreate()" onreset="anular()">' +
+        '<input class="boton" type ="submit" value="Aceptar">' + 
+        '<input class="boton" type="reset" value="Cancelar"> </form>';
+        
+        añadiendo = "true";
+    }
+    else {
+        alert ('Solo se puede editar una línea. Recargue la página para poder editar otra');
+    }
+}
+
+function capturarEnvioCreate() {
+
+    var nodoResultadoEnvio = document.getElementById('resultadoenvio');
+
+    nodoResultadoEnvio.innerHTML = '<br><br><br>' +
+    '<h3 id="h31" name="titulo3-1">Ejemplo de Captura y Envío</h3>' +
+    '<form id = "form_captura" action="#" method="get" onreset="anular()">' +
+    '<p>ALIMENTO:      ' + document.getElementById("alimento").value + '</p>' +
+    '<p>CALORÍAS:      ' + document.getElementById("calorias").value + '</p>' +
+    '<p>GRASAS:        ' + document.getElementById("grasas").value + '</p>' +
+    '<p>PROTEÍNAS:     ' + document.getElementById("proteina").value + '</p>' +
+    '<p>CARBOHIDRATOS: ' + document.getElementById("carbohidratos").value + '</p>' +
+    '<input class="boton" type ="submit" value="CONTINUAR" onclick="guardarDatos()"> </form>';
+   
+}
+
 
 var data;
 var resultado=[];
@@ -299,10 +361,46 @@ function guardarDatos() {
 }
 //READ
 
+function transformarEnEditableRead(nodo) { //El nodo recibido es SPAN
+    var nodoTd = nodo.parentNode; //Nodo Td: Celda
+    var nodoTr = nodoTd.parentNode; //Nodo Tr: Fila
+    var nodosEnTr = nodoTr.getElementsByTagName('td');
+
+    // Se guarda el contenido de cada celda de la fila seleccionada
+    var alimento = nodosEnTr[0].textContent; 
+    var calorias = nodosEnTr[1].textContent;
+    var grasas = nodosEnTr[2].textContent; 
+    var proteina = nodosEnTr[3].textContent;
+    var carbohidratos = nodosEnTr[4].textContent; 
+    var editar = nodosEnTr[5].textContent;
+
+    // Creación del input
+    var nuevoCodigoHtml = '<td><input type="text" id="alimento" value="' + alimento + '" size="10"></td>' +
+    '<td>'+ calorias +'</td>' +
+    '<td>'+ grasas + '</td>' +
+    '<td>'+ proteina + '</td>' +
+    '<td>'+ carbohidratos +'</td>' +
+    '<td>Buscando</td>'; 
+
+    nodoTr.innerHTML = nuevoCodigoHtml;
+
+    var nodoBotonesForm = document.getElementById('botonesform');
+
+    nodoBotonesForm.innerHTML = 'Pulse Aceptar para buscar o Cancelar para volver' +
+    '<form id = "form_botones" action="#" method="get" onsubmit="buscarDatos()" onreset="anular()">' +
+    '<input class="boton" type ="submit" onclick"borrarBotonesForm()" value="Aceptar">' + 
+    '<input class="boton" type="reset" value="Cancelar"> </form>';
+
+}
+function borrarBotonesForm(){
+    var nodoBotonesForm = document.getElementById('botonesform');
+    nodoBotonesForm.innerHTML = '';
+
+}
 
 function buscarDatos() {
     // Obtener el valor del alimento a buscar
-    var alimentoABuscar = document.getElementById("alimentoBuscar").value;
+    var alimento = document.getElementById("alimento").value;
 
     // Se obtiene la referencia a la base de datos
     var db = base_datos.result;
@@ -315,7 +413,7 @@ function buscarDatos() {
     var index = store.index("alimento");
 
     // Abrir un cursor que permite recorrer los elementos en el rango especificado
-    var range = IDBKeyRange.only(alimentoABuscar);
+    var range = IDBKeyRange.only(alimento);
     var cursorRequest = index.openCursor(range);
 
     // Función que se ejecuta con cada elemento (fila) encontrado
@@ -331,7 +429,7 @@ function buscarDatos() {
             var carbohidratos = cursor.value.carbohidratos;
 
             // Construir el HTML de la tabla
-            var nuevoCodigoHtml = '<tr><td>' + alimento + '</td>' +
+            var nuevoCodigoHtml = '<tr id="data_table"><td>' + alimento + '</td>' +
                 '<td>' + calorias + '</td>' +
                 '<td>' + grasas + '</td>' +
                 '<td>' + proteina + '</td>' +
@@ -339,7 +437,7 @@ function buscarDatos() {
                 '<td><span class="editar" onclick="transformarEnEditable(this)">Editar</span></td></tr>';
 
             // Obtener la tabla por su etiqueta 'tbl'
-            var tabla = document.getElementById('tbl');
+            var tabla = document.getElementById('tbody_data_table');
 
             // Verificar si la tabla se encontró correctamente
             if (tabla) {
@@ -370,4 +468,122 @@ function buscarDatos() {
 
 document.querySelector('.buscar').addEventListener('click', buscarDatos);
 
+/****************************************************************************/
+//FUNCION CRUD (Update/Actualizar)
+/****************************************************************************/
+// EDICIÓN DE TABLAS
 
+var editando = false;
+
+function transformarEnEditable(nodo) { //El nodo recibido es SPAN
+    
+    if (editando == false) {
+        var nodoTd = nodo.parentNode; //Nodo Td: Celda
+        var nodoTr = nodoTd.parentNode; //Nodo Tr: Fila
+        var nodosEnTr = nodoTr.getElementsByTagName('td');
+
+        // Se guarda el contenido de cada celda de la fila seleccionada
+        var indice =  nodosEnTr[0].textContent;
+        var alimento = nodosEnTr[1].textContent; 
+        var calorias = nodosEnTr[2].textContent;
+        var grasas = nodosEnTr[3].textContent; 
+        var proteina = nodosEnTr[4].textContent;
+        var carbohidratos = nodosEnTr[5].textContent; 
+        var editar = nodosEnTr[6].textContent;
+        // Creación del input
+        var nuevoCodigoHtml = '<td hidden><input id="indice" value="' + indice + '"></td>'+
+        '<td><input type="text" id="alimento" value="' + alimento + '" size="10"></td>' +
+        '<td><input type="text" id="calorias" value="' + calorias + '" size="5"></td>' +
+        '<td><input type="text" id="grasas" value="' + grasas + '" size="5"></td>' +
+        '<td><input type="text" id="proteina" value="' + proteina + '" size="5"></td>' +
+        '<td><input type="text" id="carbohidratos" value="' + carbohidratos + '" size="5"></td>' + 
+        '<td>En edición</td>'; 
+
+        nodoTr.innerHTML = nuevoCodigoHtml;
+        var nodoBotonesForm = document.getElementById('botonesform');
+
+        nodoBotonesForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para anularlos' +
+        '<form id = "form_botones" action="#" method="get" onsubmit="capturarEnvio()" onreset="anular()">' +
+        '<input class="boton" type ="submit" value="Aceptar">' + 
+        '<input class="boton" type="reset" value="Cancelar"> </form>';
+        
+        editando = "true";
+    }
+    else {
+        alert ('Solo se puede editar una línea. Recargue la página para poder editar otra');
+    }
+}
+
+function capturarEnvio() {
+
+    var nodoResultadoEnvio = document.getElementById('resultadoenvio');
+
+    nodoResultadoEnvio.innerHTML = '<br><br><br>' +
+    '<h3 id="h31" name="titulo3-1">Ejemplo de Captura y Envío</h3>' +
+    '<form id = "form_captura" action="#" method="get" onreset="anular()">' +
+    '<p>ALIMENTO:      ' + document.getElementById("alimento").value + '</p>' +
+    '<p>CALORÍAS:      ' + document.getElementById("calorias").value + '</p>' +
+    '<p>GRASAS:        ' + document.getElementById("grasas").value + '</p>' +
+    '<p>PROTEÍNAS:     ' + document.getElementById("proteina").value + '</p>' +
+    '<p>CARBOHIDRATOS: ' + document.getElementById("carbohidratos").value + '</p>' +
+    '<input class="boton" type ="submit" value="CONTINUAR" onclick="actualizarDatos()"> </form>';
+   
+}
+
+function actualizarDatos() {
+    var indice =  parseInt(document.getElementById("indice").value);
+    var alimento = document.getElementById("alimento").value;
+    var calorias = document.getElementById("calorias").value;
+    var grasas = document.getElementById("grasas").value;
+    var proteina = document.getElementById("proteina").value;
+    var carbohidratos = document.getElementById("carbohidratos").value;
+
+    // Crear un objeto con los datos
+    var datos = {
+        "indice": indice,
+        "alimento": alimento,
+        "calorias": calorias,
+        "grasas": grasas,
+        "proteina": proteina,
+        "carbohidratos": carbohidratos
+    };
+
+    var db = base_datos.result;
+
+    var trans = db.transaction("datos", "readwrite");
+    var store = trans.objectStore("datos");
+
+    var request = store.put(datos);
+
+    request.onsuccess = function () {
+        alert("Datos actualizados exitosamente");
+        location.reload(); // Recargar la página después de actualizar
+    };
+
+    request.onerror = function (event) {
+        console.log("Error al actualizar los datos:", event);
+        alert("Error al actualizar los datos. Consulta la consola para más detalles.");
+    };
+}
+/****************************************************************************/
+//FUNCION CRUD (Delete/Eliminar)
+function deleteData(nodo) {
+    var indice =  parseInt(document.getElementById("indice").value);
+
+    var db = base_datos.result;
+
+    var trans = db.transaction("datos", "readwrite");
+    var store = trans.objectStore("datos");
+
+    var request = store.delete(indice);
+
+    request.onsuccess = function () {
+        alert("Datos eliminados exitosamente");
+        location.reload(); // Recargar la página después de actualizar
+    };
+
+    request.onerror = function (event) {
+        console.log("Error al eliminados los datos:", event);
+        alert("Error al eliminados los datos. Consulta la consola para más detalles.");
+    };
+}

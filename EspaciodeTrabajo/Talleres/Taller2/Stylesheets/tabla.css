@@ -39,6 +39,14 @@ tr:hover td {
     color: blue; 
     cursor:pointer;
 }
+.añadir {
+    color: blue; 
+    cursor:pointer;
+}
+.buscar {
+    color: blue; 
+    cursor:pointer;
+}
 
 article {
     text-align: center;

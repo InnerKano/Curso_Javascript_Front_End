@@ -47,29 +47,30 @@
                             
                         <h2 id="h21" name="titulo2-1">TABLA EDITABLE</h2>
                         
-                        <table id="tbl">
-
-                            <caption>Contenido nutricional por cada 100 g de alimento.</caption>
-                            <tr> 
-                                <th hidden>ID</th> 
-                                <th>Alimento</th> 
-                                <th>Calorías (kCal)</th> 
-                                <th>Grasas (g)</th>
-                                <th>Proteína (g)</th> 
-                                <th>Carbohidratos (g)</th> 
-                                <th>Opciones</th>
-                            </tr>
-                            <tr> 
-                                <td><span class="buscar" onclick="buscarDatos()">Buscar</span></td> 
-                                <td></td> 
-                                <td></td>
-                                <td></td> 
-                                <td></td> 
-                                <td><span class="editar" onclick="transformarEnEditable(this)">Añadir</span></td>
-                            </tr>
-
+                        <table id="tbl"> 
+                            <thead>
+                                <caption>Contenido nutricional por cada 100 g de alimento.</caption>
+                                <tr> 
+                                    <th hidden>ID</th> 
+                                    <th>Alimento</th> 
+                                    <th>Calorías (kCal)</th> 
+                                    <th>Grasas (g)</th>
+                                    <th>Proteína (g)</th> 
+                                    <th>Carbohidratos (g)</th> 
+                                    <th>Opciones</th>
+                                </tr>
+                                <tr> 
+                                    <td><span class="buscar" onclick="transformarEnEditableRead(this)">Buscar</span></td> 
+                                    <td></td> 
+                                    <td></td>
+                                    <td></td> 
+                                    <td></td> 
+                                    <td><span class="añadir" onclick="transformarEnEditableCreate(this)">Añadir</span></td>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_data_table">
+                            </tbody>
                         </table>
-
                         <article id="botonesform">             
                         </article>
 
