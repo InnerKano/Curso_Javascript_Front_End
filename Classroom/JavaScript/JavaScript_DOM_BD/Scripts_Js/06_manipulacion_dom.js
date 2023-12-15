@@ -148,8 +148,8 @@ select_file.addEventListener("change", function() {
     imagen.src = data;
 
     // Si se desea cargar un pdf leído
-    frame.src = data;
-    frame.hidden = false;
+    // frame.src = data;
+    // frame.hidden = false;
 
     // Se oculta el botón de carga de archivo
     select_file.style.display = "none";

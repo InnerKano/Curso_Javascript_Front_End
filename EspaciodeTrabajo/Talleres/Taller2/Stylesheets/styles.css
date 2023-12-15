@@ -1,0 +1,274 @@
+* {
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;  
+}
+
+body {
+
+}
+
+.ContenedorGrid {  /*Desktop*/  /* Grilla para el diseño de la web */
+    width: 95%;    
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(5, auto);
+
+    grid-template-areas:    "H H H H H"
+                            "N N N N N" 
+                            "A M M M M"
+                            "A M M M M"
+                            "F F F F F";  
+}
+
+header {
+    height: 100px; 
+    background-image: url(bckd_paper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    grid-area: H;   /* Identificador para la grilla */
+}
+
+h1 {
+    vertical-align: text-bottom;
+    color: black;
+    text-shadow: 5px 5px 5px khaki;
+}
+
+nav {
+    background-color: rgb(179, 203, 223);
+    padding: 1px;
+    text-align: center;
+    font-weight: bolder;
+    grid-area: N;    
+}
+
+.FlexboxNav1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: stretch;
+    list-style-type: none;  
+}
+
+.Nav1 {
+    background-color: rgb(179, 203, 223);    
+    color: darkblue;
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.Nav1:hover {
+    background-color: rgb(112, 230, 157);
+    color: rgb(6, 66, 48);  
+}
+
+.FlexboxNav1_1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: center; 
+    list-style-type: none; 
+    position: absolute; 
+}
+
+.Nav1_1 {
+    background-color: rgb(179, 203, 223);    
+    color: darkblue;
+    text-decoration: none;
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;  
+    border-radius: 2px; 
+    width: 100px; 
+}
+
+.Nav1_1:hover {
+    background-color: rgb(112, 230, 157);
+    color: rgb(6, 66, 48);  
+}
+
+.FlexboxNav1_1 {
+    display: none;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+main {
+    grid-area: M;
+}
+
+.ContenedorGridMain {  /*Desktop*/ 
+    width: 95%;    
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas:    "S1 S1 S2 S2"
+                            "S1 S1 S2 S2";  
+}
+
+section {
+    
+}
+
+article {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#seccion1 {
+    grid-area: S1;
+}
+
+#art1 {
+    
+}
+
+#p1 {
+    text-align: justify;
+}
+
+#p2 {
+    text-align: justify;
+}
+#seccion2 {
+    grid-area: S2;
+}
+
+#art2 {
+    
+}
+
+#fig1 {
+    vertical-align: middle;
+    text-align: center;
+}
+
+#img1 {
+    width:400px; 
+    height:250px;
+    border: 2px solid dimgray;
+}
+
+#fcp1 {
+    text-align: center;
+}
+
+#select_file {
+    display: block;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#p3 {
+    text-align: justify;
+}
+
+aside {
+    grid-area: A;
+}
+
+.FlexboxNav2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: stretch;    
+}
+
+.Nav2 {
+    background-color: rgb(198, 140, 224);
+    color: rgb(91, 13, 110);
+    text-decoration: none;
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.Nav2:hover {
+    background-color: rgb(241, 181, 141);
+    color: rgb(139, 59, 6); 
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    padding-bottom: 30px;
+    grid-area: F;
+}
+
+address a {
+    color: rgb(39, 115, 202);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+
+/*** DISEÑO RESPONSIVE ***/
+
+@media screen and (max-width: 900px) and (min-width: 551px) { /*Tablet*/
+    .ContenedorGrid {        
+        grid-template-columns: repeat(3, 33.3%);
+        grid-template-rows: repeat(4, auto);
+
+        grid-template-areas:    "H H H"
+                                "N N N"
+                                "M M M"                                                                
+                                "A F F"; 
+    }
+
+    .ContenedorGridMain {  
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, auto);
+    
+        grid-template-areas:    "S1 S2"
+                                "S1 S2";  
+    }
+}
+
+@media screen and (max-width: 550px) {  /*smartphone*/
+    .ContenedorGrid {        
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(5, auto);
+
+        grid-template-areas:    "H H"
+                                "N N"
+                                "M M"
+                                "A A"                                
+                                "F F"; 
+    }
+    
+    .ContenedorGridMain {  
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(1, auto);
+    
+        grid-template-areas:    "S1 S2";  
+    }
+}

@@ -71,7 +71,7 @@ base_datos.onupgradeneeded = function(event) {
 
     // Se crea un objectStore llamado “datos” con una clave primaria por defecto
     // que se autoincrementa automáticamente
-    // var objectStore = db.createObjectStore("datos", { autoIncrement : true });
+    //var objectStore = db.createObjectStore("datos", { autoIncrement : true });
 
     // Se crea un objectStore llamado “datos” con una clave primaria propia llamada "indice"
     // que se autoincrementa automáticamente
