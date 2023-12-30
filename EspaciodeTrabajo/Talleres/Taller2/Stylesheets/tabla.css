@@ -47,6 +47,10 @@ tr:hover td {
     color: blue; 
     cursor:pointer;
 }
+.eliminar {
+    color: rgb(255, 0, 0); 
+    cursor:pointer;
+}
 
 article {
     text-align: center;
