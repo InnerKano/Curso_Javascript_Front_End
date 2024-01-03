@@ -318,7 +318,7 @@ function transformarEnEditableRead(nodo) { //El nodo recibido es SPAN
     var editar = nodosEnTr[5].textContent;
 
     // Creación del input
-    var nuevoCodigoHtml = '<td><input type="text" id="alimento" value="' + alimento + '" size="10"></td>' +
+    var nuevoCodigoHtml = '<td><input type="text" id="buscar_alimento" value="' + alimento + '" size="10"></td>' +
     '<td>'+ calorias +'</td>' +
     '<td>'+ grasas + '</td>' +
     '<td>'+ proteina + '</td>' +
@@ -344,8 +344,8 @@ function borrarBotonesForm(){
 
 function buscarDatos() {
     // Obtener el valor del alimento a buscar
-    var alimento = document.getElementById("alimento").value;
-
+    var alimento = document.getElementById("buscar_alimento").value;
+    
     // Se obtiene la referencia a la base de datos
     var db = base_datos.result;
 
