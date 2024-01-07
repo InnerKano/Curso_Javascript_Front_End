@@ -318,7 +318,7 @@ function transformarEnEditableRead(nodo) { //El nodo recibido es SPAN
     var editar = nodosEnTr[5].textContent;
 
     // Creación del input
-    var nuevoCodigoHtml = '<td><input type="text" id="buscar_alimento" value="' + alimento + '" size="10"></td>' +
+    var nuevoCodigoHtml = '<td><input type="text" id="buscar_alimento" placeholder="Buscar Alimento" value="" size="15"></td>' +
     '<td>'+ calorias +'</td>' +
     '<td>'+ grasas + '</td>' +
     '<td>'+ proteina + '</td>' +
